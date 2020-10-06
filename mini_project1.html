@@ -50,30 +50,25 @@
       <p>The visualization of the algorithm is produced using TU Munich' Edmond's Blossom Algorithm Visualizer [7]</p>
       <center><img src="img/blossom.gif" alt="source: TUM Blossom Algorithm"></center>
       <p>Consider an undirected graph G as shown in the graphic.</p>
-      <center>
+      
         <ol>
-          <li>Unmatched vertices exists</li>
-          <img src="img/1.png" alt="from references">
-          <li>Start Breadth First Search</li>
-          <img src="img/2.png" alt="from references">
-          <li>Continuing BFS with the next nodes</li>
-          <li>Checking the neighbours</li>
-          <li>Reconstruction of the Augmenting Path</li>
-          <li>Improved matching obtained</li>
-          <li>Free vertices left</li>
-          <li>Start Breadth-First Search Again</li>
-          <li>Continue BFS with the next node</li>
-          <li>Checking the next node</li>
-          <li>Growing the BFS Trees</li>
+          <li>First it is checked that Unmatched vertices(yellow) exists</li>
+          <li>An open vertex is selected as the assigned as the root vertex(red) for the initialization of the Breadth First Search</li>
+          <li>Continuing BFS with the next nodes starting from the root node and also assigning it as the active node</li>
+          <li>The neighbouring nodes are checked and if the node is unmatched, it is taken in the matched graph M</li>
+          <li>An augmenting path is Reconstructed as shown in orange</li>
+          <li>Thus the improved matching is thereby obtained.</li>
+          <li>Again a check is made in the graph for the other Free vertices</li>
+          <li>The open vertex is selected and Breadth-First Search is initialized again</li>
+          <li>BFS algorithm is continued and the tree is grown to that free node</li>
           <li>Checking the next neighbours</li>
-          <li>Contracting the Blossom</li>
+          <li>Once a loop is found out in the graph it is contracted to a single blosson node</li>
           <li>Continue BFS with the next node</li>
           <li>Check the next neighbours</li>
           <li>Reconstruction of the Augmenting Path</li>
-          <li>Reconstrucion of the Augmenting Path finished</li>
           <li>Improved Matching obtained</li>
         </ol>
-      </center>
+      
     
       <h3>Formal definition using appropriate notation</h3>
       <p>Consider an undirected unweighted graph <b>G(V, E)</b>, where <b>V</b> and <b>E</b> are the set of vertices and the set of edges respectively. Let <b>M</b> denote the numbers of matchings in the graph <b>G</b></p>
@@ -112,10 +107,11 @@
       <center><img src="img/example.png" alt="source: from research paper"></center>
       <center><img src="img/graph.png" alt="from research paper DEC Mata"></center>
       
-      <h3>Brief description of variants (as appropriate)</h3>
+<!--       <h3>Brief description of variants (as appropriate)</h3> -->
       
       <h3>Overview of the important applications</h3>
-      
+      <p>Apart from the Robotics Applications such as Task Allocation and Target Tracking. Blossom' Algorithms is used in the solution of combinatorical problems such as the Hall' Marriage Problem and the path problem such as the Hamiltonian Path Problems.<p>      
+
       <h3>Discussion of open research questions</h3>
       
       
