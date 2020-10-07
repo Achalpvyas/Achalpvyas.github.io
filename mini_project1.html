@@ -40,6 +40,7 @@
       <br><b>Vertex:</b>A fundamental unit with which a graph is constructed.</br>
       <br><b>Edges:</b>The objects which connect the vertices to form a graph.</br>
       <br><b>Path:</b>A path is a sequence of vertices traversed using edges.</br>
+      <br><b>Augmenting Path:</b>An augmenting path starts and ends at a free vertex and alternates between unmatched and matched edges.</br>
       <br>A Graph is represented by a set of vertices and the edges connecting these vertices. The true essence of the graph theory is its flexibility with 
          which it can be used to model a wide variety of problems. A Graph is used in the domain of computer science to model communication networks, data strucures, computer organizations and flow of computations
          in the field of sociology to measure actors' prestige or to explore rumor spreading and in the field of <b>Robotics</b> to model multi robotics problem and task allocation problems. The Travelling Salesman Problem is an optimization problem and it can be used using the techniques applied to solve the problems
@@ -52,21 +53,60 @@
       <p>Consider an undirected graph G as shown in the graphic.</p>
       
         <ol>
-          <li>First it is checked that Unmatched vertices(yellow) exists</li>
-          <li>An open vertex is selected as the assigned as the root vertex(red) for the initialization of the Breadth First Search</li>
-          <li>Continuing BFS with the next nodes starting from the root node and also assigning it as the active node</li>
-          <li>The neighbouring nodes are checked and if the node is unmatched, it is taken in the matched graph M</li>
-          <li>An augmenting path is Reconstructed as shown in orange</li>
-          <li>Thus the improved matching is thereby obtained.</li>
-          <li>Again a check is made in the graph for the other Free vertices</li>
-          <li>The open vertex is selected and Breadth-First Search is initialized again</li>
-          <li>BFS algorithm is continued and the tree is grown to that free node</li>
-          <li>Checking the next neighbours</li>
-          <li>Once a loop is found out in the graph it is contracted to a single blosson node</li>
-          <li>Continue BFS with the next node</li>
-          <li>Check the next neighbours</li>
-          <li>Reconstruction of the Augmenting Path</li>
-          <li>Improved Matching obtained</li>
+          <li>There are still unmatched vertices (yellow). We call them free vertices. We try to find an augmenting path to improve the matching.</li>
+          
+          
+          <li>We pick one of the free vertices as the root node of a modified Breadth-First Search (BFS). Its stroke is colored red throughout the execution of the BFS. From the root node, we will construct a tree of alternating paths (BFS tree) until we reach another free vertex.</li>
+          
+          
+          <li>Pick the next node from the BFS queue. We call this node the currently active node and color it red. From this node, we will explore its neighbors to look for a free vertex.</li>
+          
+          
+          <li>We check the next neighbor (orange edge) and find that it is a free vertex (yellow). Thus, there is an augmenting path between the root of the BFS and this vertex.</li>
+          
+          
+          <li>The augmenting path from the BFS root to the free vertex found has been fully reconstructed and is highlighted green.</li>
+          
+          
+          <li>The augmenting path from the BFS root to the free vertex found has been fully reconstructed and is highlighted green.</li>
+          
+          
+          <li>The augmenting path is inverted to improve the matching. Inverting an augmenting path means that all unmatched edges along the path are changed to matched ones and vice versa. By doing so, the number of edges contained in the matching increases by 1. The new matching is colored blue.</li>
+          
+          
+          <li>There are still unmatched vertices (yellow). We call them free vertices. We try to find an augmenting path to improve the matching. An augmenting path starts and ends at a free vertex and alternates between unmatched and matched edges.</li>
+          
+          
+          <li>We pick one of the free vertices as the root node of a modified Breadth-First Search (BFS). Its stroke is colored red throughout the execution of the BFS. From the root node, we will construct a tree of alternating paths (BFS tree) until we reach another free vertex.</li>
+          
+          
+          <li>Pick the next node from the BFS queue. We call this node the currently active node and color it red. From this node, we will explore its neighbors to look for a free vertex.</li>
+          
+          
+          <li>We check the next neighbor (orange) and find that it is already matched.</li>
+          
+          
+          <li>We add the neighbor and its mate to the BFS tree. The mate is further pushed to the BFS queue and we might continue our search from there later. The edges of the BFS tree are highlighted by a grey overlay.</li>
+          
+          
+          <li>We check the next neighbor (orange) and find that this node is already contained in the BFS tree. Thus, there exists a cycle and we see that it has an odd number of edges. We call such a cycle a blossom.</li>
+          
+          
+          
+          <li>The odd-length cycle we found is contracted to a single supernode. Supernodes are highlighted by a larger radius compared to the other nodes. We further push the new supernode to the BFS queue.</li>
+          
+          
+          
+          <li>Pick the next node from the BFS queue. We call this node the currently active node and color it red. From this node, we will explore its neighbors to look for a free vertex.</li>
+          
+          
+          <li>We check the next neighbor (orange edge) and find that it is a free vertex (yellow). Thus, there is an augmenting path between the root of the BFS and this vertex.</li>
+          
+          <li>The augmenting path is highlighted green. Before improving the matching we have to expand the supernodes contained in the graph.</li>
+          
+          <li>After the expansion of all supernodes the augmenting path is fully reconstructed and highlighted green.</li>
+          
+          <li>The augmenting path is inverted to improve the matching. Inverting an augmenting path means that all unmatched edges along the path are changed to matched ones and vice versa. By doing so, the number of edges contained in the matching increases by 1. The new matching is colored blue.</li>
         </ol>
       
     
