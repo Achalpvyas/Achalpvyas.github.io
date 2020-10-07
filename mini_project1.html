@@ -53,19 +53,19 @@
       <p>Consider an undirected graph G as shown in the graphic.</p>
       
         <ol>
-          <li>There are still unmatched vertices (yellow). We call them free vertices. We try to find an augmenting path to improve the matching.</li>
+          <li>All the vertices are unmatched(free vertices) as shown in yellow. An augmenting path can be found to improve matching</li>
           <center><img src="img/2.png" alt="source: TUM Blossom Algorithm"></center>
           
-          <li>We pick one of the free vertices as the root node of a modified Breadth-First Search (BFS). Its stroke is colored red throughout the execution of the BFS. From the root node, we will construct a tree of alternating paths (BFS tree) until we reach another free vertex.</li>
+          <li>A node is selected and assigned as the root node(red). A Breadth first search is initiated from the node. A tree of alternating path is expanded until the we reach another free vertex</li>
           <center><img src="img/3.png" alt="source: TUM Blossom Algorithm"></center>
           
-          <li>Pick the next node from the BFS queue. We call this node the currently active node and color it red. From this node, we will explore its neighbors to look for a free vertex.</li>
+          <li>A node is chosen from the queue and assigned as the active node (red) and its neighbours are explored to look for the free vertex</li>
           <center><img src="img/4.png" alt="source: TUM Blossom Algorithm"></center>
           
-          <li>We check the next neighbor (orange edge) and find that it is a free vertex (yellow). Thus, there is an augmenting path between the root of the BFS and this vertex.</li>
+          <li>The next neighbouring node (orange edge) is checked and if the next node is free(yellow), then there is an augmenting path between the current root and the new node</li>
           <center><img src="img/5.png" alt="source: TUM Blossom Algorithm"></center>
           
-          <li>The augmenting path from the BFS root to the free vertex found has been fully reconstructed and is highlighted green.</li>
+          <li>The augmenting path is reconstructed and is highlighted as green</li>
           <center><img src="img/6.png" alt="source: TUM Blossom Algorithm"></center>
           
           
