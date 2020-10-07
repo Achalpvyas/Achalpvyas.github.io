@@ -80,39 +80,21 @@
       <h3>Discussion of how the topic relates to decision-making for robotics</h3>
       <p>One of the important research areas in Robotics where the Blossom Algorithm has been applied extensively is the task allocation problem.</p>
         
-      <p>Ghassemi, Payam, and Chowdhury, Souma in [1] shows the application of Blossom Algorithm in the task allocation problem. In multi robot task allocation application,
-      the task planning problem can be fomulated as the maximum weighted matching of a bipartite graph. This problem can be solved using the Blossom' algorithm. This helps the multi agent system to autonomously identify 
-      the sequence of tasks it should undertake. The bipartite graph is used to represnt and analyse the task-robot relationship. Once the weighted bipartite graph has been constructed, the
-      final step (Fig. 1) is to solve the task assignment or allocation
-      problem as a matching problem. This problem is defined as
-      drawing a set of edges such that they do not share any vertices [29]. A weighted maximum matching method is used here
-      to determine the optimal task assignment. Note that, until this
-      point, all robots have taken the same (redundant) computational
-      steps; however, this final step differs across robots, since each
-      robot operates only on the portion of the bipartite graph relevant
-      to itself (e.g., not consider tasks for which its bigraph connecting edge has a weight of zero). To perform this final step, an
-      improved maximum matching algorithm proposed by Galil [30]
-      is adopted. This algorithm is based on the classical blossom algorithm introduced by Edmonds [31], which is known to run in
-      polynomial time. The pseudocode of this algorithm is given in
-      Algorithm 1. This algorithm produces the optimal decision function, M (i.e. the task assignment set). It is important to note
-      that the outcomes of this decentralized decision-making process
-      is deterministic and synchronized (assuming a deterministic environment with perfect localization). Consequently, each robot
-      will arrive at the same conflict-free optimal task assignment outcomes. Although, currently, a degree of redundancy of taking the
-      same decision on-board each robot (w.r.t. the same task cluster)
-      is allowed, more efficient implementations can be explored in
-      the future. These future advancements could also help promote
-      asynchronous multi-agent decision-making, which is a highlychallenging and an open area of research in itself [32]</p>
-      
-
-      <center><img src="img/example.png" alt="source: from research paper"></center>
+      <p>From [1], Consider n robots colored black and m tasks colored gray as shown in the figure. The task allocation problem here can be defined as a bipartite(bigraphs) which are used to study and analyse the robot-task relationships.
+      A Bipartite graph is the one in which the certices can be deivided into two sets such that no two vertices of the same set can be connected by a common edge. The definition of the bipartite graph perfectly explains the scenario here
+       when we have two separate sets one for the robots and other for the tasks and as no two robots be related to each other but robot and tasks. The edges between the robots and the tasks are weighted in order to avoid the random allocation of
+      the tasks to the robots. </p>
       <center><img src="img/graph.png" alt="from research paper DEC Mata"></center>
+      <p>Once the weighted bipartite graph is produced, based on the weights of the edges a matching graph M is constructed which gives the optimized solution.</p>
+      <center><img src="img/example.png" alt="source: from research paper"></center>
+      
       
 <!--       <h3>Brief description of variants (as appropriate)</h3> -->
       
-      <h3>Overview of the important applications</h3>
+      <h3>Other Applications</h3>
       <p>Apart from the Robotics Applications such as Task Allocation and Target Tracking. Blossom' Algorithms is used in the solution of combinatorical problems such as the Hall' Marriage Problem and the path problem such as the Hamiltonian Path Problems.<p>      
       <p>The Hamilonian Path [13] is a traversal of a finite graph that touches each edge exactly once.</p>
-      <p>The Hall' Marriage Problem </p>
+      <p></p>
       <h3>Discussion of open research questions</h3>
       
       
@@ -124,6 +106,7 @@
         <li>Edmonds, J. (1965). Paths, Trees, and Flowers. Canadian Journal of Mathematics, 17, 449-467. doi:10.4153/CJM-1965-045-4</li>
         <li>Blum, N. (2015). Maximum Matching in General Graphs Without Explicit Consideration of Blossoms Revisited. ArXiv, abs/1509.04927.</li>
         <li>Harold N. Gabow:Data Structures for Weighted Matching and Extensions to b-matching and f-factors. ACM Trans. Algorithms 14(3): 39:1-39:80 (2018)</li>
+        <li><a href="http://www.math.uwaterloo.ca/~bico//papers/cobook_select.pdf">http://www.math.uwaterloo.ca/~bico//papers/cobook_select.pdf</a></li>
         <li><a href="http://www.fang.ece.ufl.edu/eel6935/presentation/GraphTheory.pdf">http://www.fang.ece.ufl.edu/eel6935/presentation/GraphTheory.pdf</a></li>
         <li><a href="https://courses.lumenlearning.com/waymakermath4libarts/chapter/graph-theory/">Elements of Graph Theory</a></li>
         <li><a href="https://www-m9.ma.tum.de/graph-algorithms/matchings-blossom-algorithm/index_en.html">https://www-m9.ma.tum.de/graph-algorithms/matchings-blossom-algorithm/index_en.html</a></li>
@@ -133,6 +116,8 @@
         <li><a href="https://en.wikipedia.org/wiki/Bipartite_graph">https://en.wikipedia.org/wiki/Bipartite_graph</a></li>
         <li><a href="https://people.scs.carleton.ca/~maheshwa/courses/5703COMP/16Fall/Matching-Report.pdf">https://people.scs.carleton.ca/~maheshwa/courses/5703COMP/16Fall/Matching-Report.pdf</a></li>
         <li><a href="http://web.eecs.utk.edu/~jplank/plank/classes/cs494/494/notes/Edmonds/index.html">http://web.eecs.utk.edu/~jplank/plank/classes/cs494/494/notes/Edmonds/index.html</a></li>
+        <li><a href="https://www.cs.tau.ac.il/~zwick/grad-algo-0910/match.pdf">https://www.cs.tau.ac.il/~zwick/grad-algo-0910/match.pdf</a></li>
+
       </ol>
     
   </body>
