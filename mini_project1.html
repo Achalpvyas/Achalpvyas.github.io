@@ -54,22 +54,20 @@
       
         <ol>
           <li>There are still unmatched vertices (yellow). We call them free vertices. We try to find an augmenting path to improve the matching.</li>
-          <center><img src="img/1.png" alt="source: TUM Blossom Algorithm"></center>
-          
-          <li>We pick one of the free vertices as the root node of a modified Breadth-First Search (BFS). Its stroke is colored red throughout the execution of the BFS. From the root node, we will construct a tree of alternating paths (BFS tree) until we reach another free vertex.</li>
           <center><img src="img/2.png" alt="source: TUM Blossom Algorithm"></center>
           
-          <li>Pick the next node from the BFS queue. We call this node the currently active node and color it red. From this node, we will explore its neighbors to look for a free vertex.</li>
+          <li>We pick one of the free vertices as the root node of a modified Breadth-First Search (BFS). Its stroke is colored red throughout the execution of the BFS. From the root node, we will construct a tree of alternating paths (BFS tree) until we reach another free vertex.</li>
           <center><img src="img/3.png" alt="source: TUM Blossom Algorithm"></center>
           
-          <li>We check the next neighbor (orange edge) and find that it is a free vertex (yellow). Thus, there is an augmenting path between the root of the BFS and this vertex.</li>
+          <li>Pick the next node from the BFS queue. We call this node the currently active node and color it red. From this node, we will explore its neighbors to look for a free vertex.</li>
           <center><img src="img/4.png" alt="source: TUM Blossom Algorithm"></center>
           
-          <li>The augmenting path from the BFS root to the free vertex found has been fully reconstructed and is highlighted green.</li>
+          <li>We check the next neighbor (orange edge) and find that it is a free vertex (yellow). Thus, there is an augmenting path between the root of the BFS and this vertex.</li>
           <center><img src="img/5.png" alt="source: TUM Blossom Algorithm"></center>
           
           <li>The augmenting path from the BFS root to the free vertex found has been fully reconstructed and is highlighted green.</li>
           <center><img src="img/6.png" alt="source: TUM Blossom Algorithm"></center>
+          
           
           <li>The augmenting path is inverted to improve the matching. Inverting an augmenting path means that all unmatched edges along the path are changed to matched ones and vice versa. By doing so, the number of edges contained in the matching increases by 1. The new matching is colored blue.</li>
           <center><img src="img/7.png" alt="source: TUM Blossom Algorithm"></center>
